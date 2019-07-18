@@ -7,11 +7,24 @@ import {
 } from "react-navigation";
 import HomeScreen from "../pages/HomeScreen";
 import ProfileScreen from "../pages/ProfileScreen";
-import Icon from "react-native-vector-icons/AntDesign";
+import Icon from "react-native-vector-icons/AntDesign"; //https://oblador.github.io/react-native-vector-icons/
 const TabBarNavigator = createBottomTabNavigator(
   {
     Home: {
-      screen: createStackNavigator({ Home: HomeScreen }),
+      screen: createStackNavigator(
+        { Home: HomeScreen },
+        {
+          navigationOptions: {
+            headerStyle: {
+              backgroundColor: "#f4511e"
+            },
+            headerTintColor: "#eee",
+            headerTitleStyle: {
+              fontWeight: "bold"
+            }
+          }
+        }
+      ),
       path: "fastuikit://home",
       navigationOptions: {
         title: "FastUIKit",
